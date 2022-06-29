@@ -33,11 +33,15 @@ controllers.metodeRPS = async(req, res) => {
     res.render("admin/Rekayasa_Perangkat_Lunak/metodeRPS")
 }
 
-controllers.petaCPLCPMK = async(req, res) => {
+controllers.petaCPLPMK = async(req, res) => {
     res.render("admin/Rekayasa_Perangkat_Lunak/petaCPL-CPMK")
 }
 
 controllers.tambahDosenPengampu = async(req, res) => {
+    res.render("admin/Rekayasa_Perangkat_Lunak/tambahDosenPengampu")
+}
+
+controllers.dosenPengampu = async(req, res) => {
     res.render("admin/Rekayasa_Perangkat_Lunak/tambahDosenPengampu")
 }
 
