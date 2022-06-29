@@ -21,6 +21,10 @@ controllers.detailRPS = async(req, res) => {
     res.render("dosen/Pemrograman_Web/detailRPS")
 }
 
+controllers.detailRPS = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/editRPS")
+}
+
 controllers.cpmk = async(req, res) => {
     res.render("dosen/Pemrograman_Web/CPMK")
 }

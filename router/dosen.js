@@ -12,5 +12,8 @@ server.get('/dosen/CPMK',controllers.dosen.cpmk)
 server.get('/dosen/referensi',controllers.dosen.referensi)
 server.get('/dosen/komponenPenilaian',controllers.dosen.komponenPenilaian)
 server.get('/dosen/pertemuanMingguan',controllers.dosen.pertemuanMingguan)
+server.get('dosen/Pemrograman_Web/editRPS',controllers.dosen.pertemuanMingguan)
+
 
 module.exports = server
+
