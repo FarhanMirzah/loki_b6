@@ -1,7 +1,5 @@
 const models = require('../models/index')
 const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const cookieParser = require('cookie-parser')
 
 const controllers = {}
 
@@ -10,7 +8,20 @@ controllers.dashboardDosen = async(req, res) => {
 }
 
 controllers.listRPS = async(req, res) => {
-    res.render("dosen/listRPS")
+    models.course_plans.hasMany(models.course_plan_lecturers, {foreignKey: "id"})
+    models.course_plan_lecturers.belongsTo(models.course_plans, {foreignKey: "course_plan_id"})
+    const RPSDsn = await models.course_plan_lecturers.findAll({
+        where : {
+            lecturer_id : id = 2
+        },
+        atribute : ['course_id', 'lecturer_id'],
+        include : {
+            model : models.course_plans,
+            atribute : ['id', 'code', 'name', 'credit']
+        }
+    })
+    res.render("dosen/listRPS", {RPSDsn})
+    
 }
 
 controllers.tambahRPS = async(req, res) => {

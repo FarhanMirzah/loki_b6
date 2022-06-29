@@ -82,11 +82,12 @@
               </tr>
             </thead>
             <tbody>
+              <% RPSDsn.forEach((R,i)=>{ %>
               <tr>
-                <th scope="row">1</th>
-                <td>JSI62165</td>
-                <td>Pemrograman Web</td>
-                <td>3</td>
+                <th scope="row"> <%= i+1  %> </th>
+                <td> <%= R.code %>  </td>
+                <td> <%= R.name %> </td>
+                <td><%=R.credit%></td>
                 <td>00</td>
                 <td class="no-print">
                   <a href="/dosen/detailRPS?id=1">
@@ -101,6 +102,7 @@
                     </button></a>
                 </td>
               </tr>
+              <% }) %>
             </tbody>
           </table>
 
