@@ -48,11 +48,7 @@ controllers.tambahDosenPengampu = async(req, res) => {
 }
 
 controllers.dosenPengampu = async(req, res) => {
-<<<<<<< HEAD
     res.render("admin/Rekayasa_Perangkat_Lunak/dosenPengampu")
-=======
-    res.render("admin/Rekayasa_Perangkat_Lunak/tambahDosenPengampu")
->>>>>>> ca3a96ae168dfa51070fe2af6a68d362625882b7
 }
 
 module.exports = controllers
