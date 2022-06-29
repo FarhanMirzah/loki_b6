@@ -39,7 +39,7 @@ controllers.metodeRPS = async(req, res) => {
     res.render("admin/Rekayasa_Perangkat_Lunak/metodeRPS")
 }
 
-controllers.petaCPLCPMK = async(req, res) => {
+controllers.petaCPLPMK = async(req, res) => {
     res.render("admin/Rekayasa_Perangkat_Lunak/petaCPL-CPMK")
 }
 
@@ -48,7 +48,11 @@ controllers.tambahDosenPengampu = async(req, res) => {
 }
 
 controllers.dosenPengampu = async(req, res) => {
+<<<<<<< HEAD
     res.render("admin/Rekayasa_Perangkat_Lunak/dosenPengampu")
+=======
+    res.render("admin/Rekayasa_Perangkat_Lunak/tambahDosenPengampu")
+>>>>>>> ca3a96ae168dfa51070fe2af6a68d362625882b7
 }
 
 module.exports = controllers
