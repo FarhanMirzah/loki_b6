@@ -10,5 +10,6 @@ server.get('/admin/Pemrograman_Web/editDosenPengampu',controllers.admin.editDose
 server.get('/admin/Pemrograman_Web/metodeRPS',controllers.admin.metodeRPS)
 server.get('/admin/Pemrograman_Web/petaCPL-CPMK',controllers.admin.petaCPLCPMK)
 server.get('/admin/Pemrograman_Web/tambahDosenPengampu',controllers.admin.tambahDosenPengampu)
+server.get('/admin/listRPS',controllers.admin.listRPS)
 
 module.exports = server
