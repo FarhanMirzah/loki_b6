@@ -21,8 +21,6 @@ controllers.dosenPengampu = async(req, res) => {
     res.render("admin/Pemrograman_Web/dosenPengampu")
 }
 
-
-
 controllers.metodeRPS = async(req, res) => {
     res.render("admin/Pemrograman_Web/metodeRPS")
 }
@@ -34,25 +32,4 @@ controllers.petaCPLCPMK = async(req, res) => {
 controllers.tambahDosenPengampu = async(req, res) => {
     res.render("admin/Pemrograman_Web/tambahDosenPengampu")
 }
-
-controllers.editDosenPengampu = async(req, res) => {
-    res.render("admin/Rekayasa_Perangkat_Lunak/editDosenPengampu")
-}
-
-controllers.metodeRPS = async(req, res) => {
-    res.render("admin/Rekayasa_Perangkat_Lunak/metodeRPS")
-}
-
-controllers.petaCPLPMK = async(req, res) => {
-    res.render("admin/Rekayasa_Perangkat_Lunak/petaCPL-CPMK")
-}
-
-controllers.tambahDosenPengampu = async(req, res) => {
-    res.render("admin/Rekayasa_Perangkat_Lunak/tambahDosenPengampu")
-}
-
-controllers.dosenPengampu = async(req, res) => {
-    res.render("admin/Rekayasa_Perangkat_Lunak/dosenPengampu")
-}
-
 module.exports = controllers
