@@ -64,6 +64,14 @@ controllers.komponenPenilaian = async(req, res) => {
     res.render("dosen/Pemrograman_Web/komponenPenilaian")
 }
 
+controllers.editKomponenPenilaian = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/editKomponenPenilaian")
+}
+
+controllers.tambahKomponenPenilaian = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/tambahKomponenPenilaian")
+}
+
 controllers.pertemuanMingguan = async(req, res) => {
     res.render("dosen/Pemrograman_Web/pertemuanMingguan")
 }

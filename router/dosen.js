@@ -15,6 +15,8 @@ server.get('/dosen/referensi',controllers.dosen.referensi)
 server.get('/dosen/editReferensi',controllers.dosen.editReferensi)
 server.get('/dosen/tambahReferensi',controllers.dosen.tambahReferensi)
 server.get('/dosen/komponenPenilaian',controllers.dosen.komponenPenilaian)
+server.get('/dosen/editKomponenPenilaian',controllers.dosen.editKomponenPenilaian)
+server.get('/dosen/tambahKomponenPenilaian',controllers.dosen.tambahKomponenPenilaian)
 server.get('/dosen/pertemuanMingguan',controllers.dosen.pertemuanMingguan)
 server.get('/dosen/editRPS',controllers.dosen.editRPS)
 
