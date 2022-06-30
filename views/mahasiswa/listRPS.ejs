@@ -47,12 +47,9 @@
           <i class='bx bx-menu sidebarBtn'></i>
           <span class="dashboard">List RPS</span>
         </div>
-        <div class="profile-details">
-          <!--<img src="images/profile.jpg" alt="">-->
-          <a href="../login" onclick="return confirm('Apakah Anda yakin ingin ke halaman Login?');">
-            <span class="admin_name">Login</span>
-          </a>
-        </div>
+        <a class="btn btn-primary" href="../login" role="button" onclick="return confirm('Apakah Anda yakin ingin ke halaman Login?');">
+          Login
+        </a>
       </nav>
       
       <div class="home-content">
@@ -64,7 +61,7 @@
           </div>
           <div class="search-box">
             <input type="text" size="50" placeholder="Masukkan Kode/Nama Mata Kuliah" style="margin:0px 0px" >
-            <a href="/hasilPencarian">
+            <a href="hasilPencarian">
               <input type="submit" class="wed" name="" value="Cari" size="15"> 
             </a>
           </div>
@@ -93,7 +90,7 @@
                 <td><%=R.semester%></td>
                 <td><%=R.credit%></td>
                 <td class="no-print">
-                  <a href="/detailRPS">
+                  <a href="/detailRPS?id=1">
                     <button style="margin-right: 5px;" type="button" class="btn btn-primary">
                       <i class='bx bx-box' ></i>
                       Detail

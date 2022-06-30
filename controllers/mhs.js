@@ -15,5 +15,8 @@ controllers.detailRPS = async (req, res) => {
     res.render("mahasiswa/Pemrograman_Web/detailRPS")
 }
 
+controllers.hasilPencarian = async(req, res) => {
+    res.render("mahasiswa/hasilPencarian")
+}
 
 module.exports = controllers

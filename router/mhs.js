@@ -5,5 +5,6 @@ const controllers = require('../controllers/index.js')
 server.get('/', controllers.mhs.home)
 server.get('/listRPS',controllers.mhs.listRPS)
 server.get('/detailRPS',controllers.mhs.detailRPS)
+server.get('/hasilPencarian',controllers.mhs.hasilPencarian)
 
 module.exports = server

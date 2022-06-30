@@ -7,7 +7,14 @@
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
   </head>
 
   <body>
@@ -20,19 +27,19 @@
 
       <div class="nav-links">
         <li>
-          <a href="/dashboardMahasiswa">
+          <a href="/">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="/listRPS.html">
+          <a href="listRPS">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">List RPS</span>
           </a>
         </li>
         <li>
-          <a href="/hasilPencarian" class="active">
+          <a href="hasilPencarian" class="active">
             <i class='bx bx-coin-stack' ></i>
             <span class="links_name">Pencarian</span>
           </a>
@@ -46,12 +53,9 @@
           <i class='bx bx-menu sidebarBtn'></i>
           <span class="dashboard">Pencarian</span>
         </div>
-        <div class="profile-details">
-          <!--<img src="images/profile.jpg" alt="">-->
-          <a href="../login" onclick="return confirm('Apakah Anda yakin ingin ke halaman Login?');">
-            <span class="admin_name">Login</span>
-          </a>
-        </div>
+        <a class="btn btn-primary" href="../login" role="button" onclick="return confirm('Apakah Anda yakin ingin ke halaman Login?');">
+          Login
+        </a>
       </nav>
 
       <div class="home-content">
@@ -62,7 +66,7 @@
             </div>
             <div class="search-box" style="position: absolute; right: 20px;">
               <input type="text" size="50" placeholder="Masukkan Kode/Nama Mata Kuliah" style="margin:0px 0px" >
-              <a href="/hasilPencarian">
+              <a href="hasilPencarian">
                 <input type="submit" class="wed" name="" value="Cari" size="15"> 
               </a>
             </div>
