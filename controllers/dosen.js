@@ -32,7 +32,7 @@ controllers.detailRPS = async(req, res) => {
     res.render("dosen/Pemrograman_Web/detailRPS")
 }
 
-controllers.detailRPS = async(req, res) => {
+controllers.editRPS = async(req, res) => {
     res.render("dosen/Pemrograman_Web/editRPS")
 }
 
@@ -40,8 +40,24 @@ controllers.cpmk = async(req, res) => {
     res.render("dosen/Pemrograman_Web/CPMK")
 }
 
+controllers.editCPMK = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/editCPMK")
+}
+
+controllers.tambahCPMK = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/tambahCPMK")
+}
+
 controllers.referensi = async(req, res) => {
     res.render("dosen/Pemrograman_Web/referensi")
+}
+
+controllers.editReferensi = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/editReferensi")
+}
+
+controllers.tambahReferensi = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/tambahReferensi")
 }
 
 controllers.komponenPenilaian = async(req, res) => {

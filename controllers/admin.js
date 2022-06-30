@@ -9,6 +9,10 @@ controllers.dashboardAdmin = async(req, res) => {
     res.render("admin/dashboardAdmin")
 }
 
+controllers.listRPS = async(req, res) => {
+    res.render("admin/listRPS")
+}
+
 controllers.editDosenPengampu = async(req, res) => {
     res.render("admin/Pemrograman_Web/editDosenPengampu")
 }

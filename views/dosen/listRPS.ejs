@@ -83,11 +83,31 @@
             </thead>
             <tbody>
               <% RPSDsn.forEach((R,i)=>{ %>
-              <tr>
-                <th scope="row"> <%= i+1  %> </th>
-                <td> <%= R.code %>  </td>
-                <td> <%= R.name %> </td>
-                <td><%=R.credit%></td>
+                <tr>
+                  <th scope="row"> <%= i+1  %> </th>
+                  <td> <%= R.code %> </td>
+                  <td> <%= R.name %> </td>
+                  <td> <%=R.credit%> </td>
+                  <td>00</td>
+                  <td class="no-print">
+                  <a href="/dosen/detailRPS?id=1">
+                    <button style="margin-right: 5px;" type="button" class="btn btn-success">
+                      <i class='bx bx-box' ></i>
+                      Detail
+                    </button></a>
+                  <a href="/dosen/editRPS?id=1">
+                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
+                      <i class='bi bi-pencil-square' ></i>
+                      Edit
+                    </button></a>
+                </td>
+              </tr>
+                  <% }) %>
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>JSI62165</td>
+                <td>Pemrograman Web</td>
+                <td>3</td>
                 <td>00</td>
                 <td class="no-print">
                   <a href="/dosen/detailRPS?id=1">
@@ -101,8 +121,7 @@
                       Edit
                     </button></a>
                 </td>
-              </tr>
-              <% }) %>
+              </tr> -->
             </tbody>
           </table>
 
