@@ -18,6 +18,8 @@ server.get('/dosen/komponenPenilaian',controllers.dosen.komponenPenilaian)
 server.get('/dosen/editKomponenPenilaian',controllers.dosen.editKomponenPenilaian)
 server.get('/dosen/tambahKomponenPenilaian',controllers.dosen.tambahKomponenPenilaian)
 server.get('/dosen/pertemuanMingguan',controllers.dosen.pertemuanMingguan)
+server.get('/dosen/editPertemuanMingguan',controllers.dosen.editPertemuanMingguan)
+server.get('/dosen/tambahPertemuanMingguan',controllers.dosen.tambahPertemuanMingguan)
 server.get('/dosen/editRPS',controllers.dosen.editRPS)
 
 

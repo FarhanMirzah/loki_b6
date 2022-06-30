@@ -76,5 +76,12 @@ controllers.pertemuanMingguan = async(req, res) => {
     res.render("dosen/Pemrograman_Web/pertemuanMingguan")
 }
 
+controllers.editPertemuanMingguan = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/editPertemuanMingguan")
+}
+
+controllers.tambahPertemuanMingguan = async(req, res) => {
+    res.render("dosen/Pemrograman_Web/tambahPertemuanMingguan")
+}
 
 module.exports = controllers
