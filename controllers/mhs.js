@@ -40,15 +40,35 @@ controllers.detailRPS = async (req, res) => {
             id : course_id
         }
     })
-    const cpmk = await models.course_lo_details.findAll({
-        
+    const cpmk = await models.course_los.findAll({
+        where:{
+            course_plan_id:id
+        },
+        include:[{
+            model:models.course_lo_details,
+        }]
     })
     const cpl = await models.curriculum_los.findAll({
         where:{
             id : curricula.curriculum_id
         }
     })
-    res.render("mahasiswa/Pemrograman_Web/detailRPS",{course,dosen})
+    const ref = await models.course_plan_references.findAll({
+        where:{
+            course_plan_id: id
+        }
+    })
+    const asses = await models.course_plan_assessments.findAll({
+        where:{
+            course_plan_id: id
+        }
+    })
+    const weekMeet = await models.course_plan_details.findAll({
+        where:{
+            course_plan_id: id
+        }
+    })
+    res.render("mahasiswa/Pemrograman_Web/detailRPS",{course,dosen,cpl,cpmk,ref,asses,weekMeet})
 }
 
 controllers.hasilPencarian = async(req, res) => {

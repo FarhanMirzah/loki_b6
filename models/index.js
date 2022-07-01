@@ -50,6 +50,8 @@ models.course_plan_detail_assessments = course_plan_detail_assessments
 models.course_plans = course_plans
 models.course_lo_details = course_lo_details
 
+course_los.hasMany(course_lo_details,{foreignKey:'course_lo_id'})
+
 
 
 course_plan_lecturers.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
@@ -63,14 +65,12 @@ course_requirements.belongsTo(course_lo_details, {foreignKey : 'required_course_
 courses.belongsTo(curricula, {foreignKey : 'curriculum_id'})
 course_lo_details.belongsTo(course_los, {foreignKey : 'course_lo_id'})
 course_los.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
-course_plans.belongsTo(courses, {foreignKey : 'course_id'})
 course_plan_detail_outcomes.belongsTo(course_los, {foreignKey : 'course_lo_id'})
 course_plan_assessments.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
 course_plan_details.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
 course_plan_references.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
 course_plan_detail_refs.belongsTo(course_plan_details, {foreignKey : 'course_plan_detail_id'})
 course_plan_detail_refs.belongsTo(course_plan_references, {foreignKey : 'course_plan_detail_id'})
-course_los.belongsTo(course_plans, {foreignKey : 'course_id'})
 course_plan_detail_outcomes.belongsTo(course_plan_details, {foreignKey : 'course_plan_id'})
 course_plan_detail_assessments.belongsTo(course_plan_details, {foreignKey : 'course_plan_detail_id'})
 course_plan_detail_assessments.belongsTo(course_plan_assessments, {foreignKey : 'course_plan_detail_id'})
