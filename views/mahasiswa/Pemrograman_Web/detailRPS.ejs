@@ -51,7 +51,7 @@
       <nav>
         <div class="sidebar-button">
           <i class='bx bx-menu sidebarBtn'></i>
-          <span class="dashboard">Pemrograman Web (JSI62165)</span>
+          <span class="dashboard"><%=course.name%> (<%=course.code%>)</span>
         </div>
         <a class="btn btn-primary" href="../login" role="button" onclick="return confirm('Apakah Anda yakin ingin ke halaman Login?');">
           Login
@@ -67,20 +67,24 @@
         </div>
 
         <div style="margin:0px 20px ;">
-          <h5>Nama Mata Kuliah: Pemrograman Web</h5>
-          <h5>Kode Mata Kuliah: JSI62165</h5>
-          <h5>Dosen Pengampu: Husnil Kamil</h5>
-          <h5>Semester: 4</h5>
-          <h5>Bobot SKS: 3</h5>
+          <h5>Nama Mata Kuliah: <%= course.name %></h5>
+          <h5>Kode Mata Kuliah: <%= course.code %></h5>
+          <h5>Dosen Pengampu: <% dosen.forEach((d,i)=>{ %>
+            <%= d.lecturer.name %>,
+          <%  }) %></h5>
+          <h5>Semester: <%=course.semester%></h5>
+          <h5>Bobot SKS: <%=course.credit%></h5>
         </div>
         &nbsp;
 
         <div style="margin:0px 20px ;">
           <h5>Deskripsi Mata Kuliah</h5>
           <p>
-            Mata kuliah pemrograman web merupakan mata kuliah yang membahas tentang teknik pengembangan website dari hulu ke hilir, 
-            yaitu mulai dari algoritma dalam pemrograman web, pembuatan website (front-end dan back-end), hosting, hingga dokumentasi 
-            dan hukum kekayaan intelektual dari program yang dihasilkan nantinya.
+            <% if (course.description){ %>
+              <%=course.description%>.
+            <% }else { %>
+              Deskripsi Belum ada
+            <% } %>
           </p>
         </div>
         &nbsp;

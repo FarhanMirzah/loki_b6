@@ -86,11 +86,17 @@
                 <th scope="row"> <%= i+1  %> </th>
                 <td> <%= R.code %>  </td>
                 <td> <%= R.name %> </td>
-                <td>Husnil Kamil</td>
+                <td>
+                  <% dosen.forEach((d,a)=>{ %>
+                    <% if (d.course_plan_id==R.id) { %>
+                      <p> <%= d.lecturer.name %> </p>
+                    <% }%>
+                  <%})%>
+                </td>
                 <td><%=R.semester%></td>
                 <td><%=R.credit%></td>
                 <td class="no-print">
-                  <a href="/detailRPS?id=1">
+                  <a href="<%= `/detailRPS?id=${R.id}` %>">
                     <button style="margin-right: 5px;" type="button" class="btn btn-primary">
                       <i class='bx bx-box' ></i>
                       Detail
