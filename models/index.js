@@ -48,17 +48,6 @@ models.course_plan_assessments = course_plan_assessments
 models.course_plans = course_plans
 models.course_lo_details = course_lo_details
 
-course_plans.hasMany(course_plan_lecturers, {
-    foreignKey : 'course_plan_id',
-    })
-
-lecturers.hasMany(course_plan_lecturers, {
-    foreignKey : 'lecturer_id',
-    })
-
-courses.hasMany(course_plans, {
-    foreignKey : 'course_id',
-    })
 
 
 course_plan_lecturers.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
