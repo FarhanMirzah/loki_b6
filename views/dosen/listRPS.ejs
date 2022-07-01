@@ -85,9 +85,9 @@
               <% RPSDsn.forEach((R,i)=>{ %>
                 <tr>
                   <th scope="row"> <%= i+1  %> </th>
-                  <td> <%= R.code %> </td>
-                  <td> <%= R.name %> </td>
-                  <td> <%=R.credit%> </td>
+                  <td> <%= R.course_plan.code %> </td>
+                  <td> <%= R.course_plan.name %> </td>
+                  <td> <%=R.course_plan.credit%> </td>
                   <td>00</td>
                   <td class="no-print">
                   <a href="/dosen/detailRPS?id=1">

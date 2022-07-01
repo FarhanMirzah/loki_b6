@@ -7,7 +7,7 @@ var course_plan_detail_assessments=db.define('course_plan_detail_assessments', {
     id : {
         type : DataTypes.BIGINT,
         allownull : false,
-        prymaryKey : true,
+        primaryKey : true,
         autoIncrement : true
       },
 

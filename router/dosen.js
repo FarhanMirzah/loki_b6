@@ -4,6 +4,7 @@ const controllers = require('../controllers/index.js')
 const cekLogin = require('../middleware/cekLogin.js')
 const cekDosenPengampu = require('../middleware/cekDosenPengampu.js')
 
+server.get('/loginDosen',controllers.auth.loginDosen)
 server.get('/dosen/dashboardDosen',controllers.dosen.dashboardDosen)
 server.get('/dosen/listRPS',controllers.dosen.listRPS)
 server.get('/dosen/tambahRPS',controllers.dosen.tambahRPS)

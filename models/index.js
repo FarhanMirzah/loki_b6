@@ -19,6 +19,7 @@ const course_plan_detail_outcomes = require('./course_plan_detail_outcomes.js')
 const course_plan_detail_refs = require('./course_plan_detail_refs.js')
 const course_plan_details = require('./course_plan_details.js')
 const course_plan_assessments = require('./course_plan_assessments.js')
+const course_plan_detail_assessments = require('./course_plan_detail_assessments.js')
 const course_plans = require('./course_plans.js')
 const course_lo_details = require('./course_lo_details.js')
 
@@ -45,6 +46,7 @@ models.course_plan_detail_outcomes = course_plan_detail_outcomes
 models.course_plan_detail_refs = course_plan_detail_refs
 models.course_plan_details = course_plan_details
 models.course_plan_assessments = course_plan_assessments
+models.course_plan_detail_assessments = course_plan_detail_assessments
 models.course_plans = course_plans
 models.course_lo_details = course_lo_details
 
@@ -53,5 +55,24 @@ models.course_lo_details = course_lo_details
 course_plan_lecturers.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
 course_plan_lecturers.belongsTo(lecturers, {foreignKey : 'lecturer_id'})
 course_plans.belongsTo(courses, {foreignKey : 'course_id'})
+curriculum_profiles.belongsTo(curricula, {foreignKey : 'curriculum_id'})
+curriculum_los.belongsTo(curricula, {foreignKey : 'curriculum_id'})
+course_lo_details.belongsTo(curriculum_los, {foreignKey : 'curriculum_lo_id' })
+course_requirements.belongsTo(courses, {foreignKey : 'course_id'} )
+course_requirements.belongsTo(course_lo_details, {foreignKey : 'required_course_id'})
+courses.belongsTo(curricula, {foreignKey : 'curriculum_id'})
+course_lo_details.belongsTo(course_los, {foreignKey : 'course_lo_id'})
+course_los.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
+course_plans.belongsTo(courses, {foreignKey : 'course_id'})
+course_plan_detail_outcomes.belongsTo(course_los, {foreignKey : 'course_lo_id'})
+course_plan_assessments.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
+course_plan_details.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
+course_plan_references.belongsTo(course_plans, {foreignKey : 'course_plan_id'})
+course_plan_detail_refs.belongsTo(course_plan_details, {foreignKey : 'course_plan_detail_id'})
+course_plan_detail_refs.belongsTo(course_plan_references, {foreignKey : 'course_plan_detail_id'})
+course_los.belongsTo(course_plans, {foreignKey : 'course_id'})
+course_plan_detail_outcomes.belongsTo(course_plan_details, {foreignKey : 'course_plan_id'})
+course_plan_detail_assessments.belongsTo(course_plan_details, {foreignKey : 'course_plan_detail_id'})
+course_plan_detail_assessments.belongsTo(course_plan_assessments, {foreignKey : 'course_plan_detail_id'})
 
 module.exports = models
