@@ -95,8 +95,8 @@ database.authenticate()
     console.error(`Gagal terhubung : ${err}`);
   });
 
-app.set("view engine", "ejs")
-app.use(express.static("views"))
+  app.set("view engine", "ejs");
+  app.use(express.static("public"));
 
 app.get('/login', controllers.auth.login)
 app.get('/logout', controllers.auth.logout)

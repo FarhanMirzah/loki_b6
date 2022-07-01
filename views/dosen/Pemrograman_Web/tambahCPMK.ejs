@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -59,7 +60,7 @@
       </div>
     </div>
 
-    <section class="home-section">
+    <section class="home-section ps-3" > 
       <nav>
         <div class="sidebar-button">
           <i class='bx bx-menu sidebarBtn'></i>
@@ -86,24 +87,18 @@
         </div>
         
         <div style="margin:30px ;">
-          <form>
-            <div class="form-row">
+          <form class="form form-horizontal" method="post" action="/dosen/tambahCPMK">
                 <div class="form-group col-md-6">
-                    <label for="cp">Jenis:</label>
-                    <select name="cp" id="cp">
-                        <option value="program studi">CP Program Studi</option>
-                        <option value="mata kuliah">CP Mata Kuliah</option>
-                    </select>
+                    <label style="margin-bottom: 10px;" for="inputKeterangan">Kode CPMK</label>
+                    <input name="code" style="margin-bottom: 10px;" type="text" class="form-control" id="inputKode" placeholder="Kode CPMK" >
                 </div>
-                &nbsp;
-
                 <div class="form-group col-md-6">
                     <label style="margin-bottom: 10px;" for="inputKeterangan">Keterangan</label>
-                    <input style="margin-bottom: 10px;" type="text" class="form-control" id="inputKeterangan" placeholder="Keterangan">
+                    <input name="name" style="margin-bottom: 10px;" type="text" class="form-control" id="inputKeterangan" placeholder="Keterangan">
                 </div>
             </div>
             
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+            <button method="post" action="/dosen/tambahCPMK" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" method="POST" action="/dosen/tambahCPMK">
               Tambah
             </button>
           </form>
