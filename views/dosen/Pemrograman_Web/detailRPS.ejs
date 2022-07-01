@@ -69,33 +69,29 @@
 
       <div class="home-content">
         <div style="margin:0px 20px ;">
-          <h5>Nama Mata Kuliah: Pemrograman Web</h5>
-          <h5>Kode Mata Kuliah: JSI62165</h5>
-          <h5>Dosen Pengampu: Husnil Kamil</h5>
-          <h5>Semester: 4</h5>
-          <h5>Bobot SKS: 3</h5>
+          <h5>Nama Mata Kuliah: <%= course.name %></h5>
+          <h5>Kode Mata Kuliah: <%= course.code %></h5>
+          <h5>Dosen Pengampu: <% dosen.forEach((d,i)=>{ %>
+            <%= d.lecturer.name %>,
+          <%  }) %></h5>
+          <h5>Semester: <%=course.semester%></h5>
+          <h5>Bobot SKS: <%=course.credit%></h5>
         </div>
         &nbsp;
 
         <div style="margin:0px 20px ;">
           <h5>Deskripsi Mata Kuliah</h5>
           <p>
-            Mata kuliah pemrograman web merupakan mata kuliah yang membahas tentang teknik pengembangan website dari hulu ke hilir, 
-            yaitu mulai dari algoritma dalam pemrograman web, pembuatan website (front-end dan back-end), hosting, hingga dokumentasi 
-            dan hukum kekayaan intelektual dari program yang dihasilkan nantinya.
+            <% if (course.description){ %>
+              <%=course.description%>.
+            <% }else { %>
+              Deskripsi Belum ada
+            <% } %>
           </p>
         </div>
         &nbsp;
 
         <div style="margin:0px 20px ;">
-          <div class="btn">
-            <a href="CPMK?id=1">
-              <button type="button" class="btn btn-primary no-print" style="position: absolute; right: 20px;">
-                Detail
-              </button>
-            </a>
-          </div>
-
           <h5>Peta CPL ke CPMK</h5>
           <table class="table table-bordered">
             <thead>
@@ -105,20 +101,12 @@
               </tr>
             </thead>
             <tbody>
+              <% cpl.forEach((c,i)=>{%>
               <tr>
-                <th scope="row">CP-1</th>
-                <td>Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi.</td>
+                <th scope="row"><%= c.code %></th>
+                <td><%= c.name %></td>
               </tr>
-
-              <tr>
-                <th scope="row">CP-2</th>
-                <td>Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi.</td>
-              </tr>
-
-              <tr>
-                <th scope="row">CP-3</th>
-                <td>Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan mengevaluasi Sistem Informasi.</td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
 
@@ -130,54 +118,24 @@
               </tr>
             </thead>
             <tbody>
+              <% cpmk.forEach((cp,a)=>{ %>
               <tr>
-                <th scope="row">1</th>
-                <td>Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web. (CP-1, CP-2)</td>
+                <th scope="row"><%=a+1%></th>
+                <td><%= cp.name %>. 
+                  <!-- (
+                  <% cpl.forEach((c,i)=>{%>
+                    <%= cp.course_lo_details.curriculum_lo_id %>
+                  <% }) %>
+                ) -->
+              </td>
               </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web. (CP-1, CP-2)</td>
-              </tr>
-
-              <tr>
-                <th scope="row">3</th>
-                <td>Mahasiswa mampu menggunakan pemrograman asynchronous. (CP-2, CP-3)</td>
-              </tr>
-
-              <tr>
-                <th scope="row">4</th>
-                <td>Mahasiswa mampu menerapkan keamanan untuk situs web. (CP-2, CP-3)</td>
-              </tr>
-
-              <tr>
-                <th scope="row">5</th>
-                <td>Mahasiswa mampu menggunakan dan mendesain format data JSON. (CP-2, CP-3)</td>
-              </tr>
-
-              <tr>
-                <th scope="row">6</th>
-                <td>Mahasiswa mampu deploy aplikasi web ke internet. (CP-2)</td>
-              </tr>
-
-              <tr>
-                <th scope="row">7</th>
-                <td>Mahasiswa mampu mendemonstrasikan keterampilan bekerja sama dengan tim. (CP-3)</td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>
         &nbsp;
 
         <div style="margin:0px 20px ;">
-          <div class="btn">
-            <a href="referensi?id=1">
-              <button type="button" class="btn btn-primary no-print" style="position: absolute; right: 20px;">
-                Detail
-              </button>
-            </a>
-          </div>
-
           <h5>Referensi Utama</h5>
           <table class="table table-bordered">
             <thead>
@@ -187,55 +145,18 @@
               </tr>
             </thead>
             <tbody>
+              <% ref.forEach((r,i)=>{%>
               <tr>
-                <th scope="row">1</th>
-                <td>Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox</td>
+                <th scope="row"><%=i+1%></th>
+                <td><%=r.author%>, <%=r.year%>, “<%=r.title%>”, <%=r.publisher%></td>
               </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>Nicholas Zakas, 2012, “Professional Javascript for Web Developer”, John Wiley & Sons</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h5>Referensi Pendukung</h5>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Referensi</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark Pilgrim, 2010, “HTML5 Up and Running”, O’Reilly</td>
-              </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>Steve Fulton; Jeff Fulton, 2011, “HTML5 Canvas”, O’Reilly</td>
-              </tr>
-
-              <tr>
-                <th scope="row">3</th>
-                <td>S. Stefanor, 2010, “Javascript Patterns”, O’Reilly</td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>
         &nbsp;
 
         <div style="margin:0px 20px ;">
-          <div class="btn">
-            <a href="komponenPenilaian?id=1">
-              <button type="button" class="btn btn-primary no-print" style="position: absolute; right: 20px;">
-                Detail
-              </button>
-            </a>
-          </div>
-
           <h5>Komponen Penilaian</h5>
           <table class="table table-bordered">
             <thead>
@@ -246,79 +167,45 @@
               </tr>
             </thead>
             <tbody>
+              <% asses.forEach((a,i)=>{%>
               <tr>
-                <th scope="row">1</th>
-                <td>Kehadiran</td>
-                <td>10%</td>
+                <th scope="row"><%=i+1%></th>
+                <td><%=a.name%></td>
+                <td><%=a.percentage%>%</td>
               </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>Tugas</td>
-                <td>10%</td>
-              </tr>
-
-              <tr>
-                <th scope="row">3</th>
-                <td>Kuis</td>
-                <td>15%</td>
-              </tr>
-
-              <tr>
-                <th scope="row">4</th>
-                <td>UTS</td>
-                <td>25%</td>
-              </tr>
-
-              <tr>
-                <th scope="row">5</th>
-                <td>UAS</td>
-                <td>40%</td>
-              </tr>
+              <%})%>
             </tbody>
           </table>
         </div>
         &nbsp;
 
         <div style="margin:0px 20px ;">
-          <div class="btn">
-            <a href="pertemuanMingguan?id=1">
-              <button type="button" class="btn btn-primary no-print" style="position: absolute; right: 20px;">
-                Detail
-              </button>
-            </a>
-          </div>
-
           <h5>Pertemuan Mingguan</h5>
           <table class="table table-bordered">
             <thead>
+              
               <tr>
                 <th scope="col">Minggu ke-</th>
                 <th scope="col">Kemampuan akhir yang diharapkan</th>
                 <th scope="col">Bahan Kajian (Materi Ajar) dan Referensi</th>
                 <th scope="col">Metode Pembelajaran dan Alokasi Waktu</th>
                 <th scope="col">Pengalaman Belajar Mahasiswa</th>
-                
+               
               </tr>
             </thead>
             <tbody>
+              <% weekMeet.forEach((w,i)=>{ %>
               <tr>
-                <th scope="row">1</th>
+                <th scope="row"><%=i+1%></th>
                 <td>
-                  Pengenalan Web
-                  <ol type="a">
-                    <li>Web dan Hypertext Document</li>
-                    <li>Protokol HTTP (method dan status message)</li>
-                    <li>Client side (front-end)</li>
-                    <li>Server side (back-end)</li>
-                    <li>Interaksi client side dengan server side</li>
-                  </ol>
+                  <%=cpmk[i].name%>
                 </td>
-                <td>Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web</td>
-                <td>Presentasi Dosen dan diskusi (3 x 50 menit)</td>
-                <td>Mahasiswa memberikan tanggapan tentang konsep dasar dan komponen aplikasi berbasis web</td>
+                <td><%=w.material%></td>
+                <td><%=w.method%></td>
+                <td><%=w.student_experience%></td>
                 
               </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>
