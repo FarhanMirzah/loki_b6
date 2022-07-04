@@ -121,7 +121,13 @@ controllers.tambahCPMK = async(req, res) => {
 }
 
 controllers.referensi = async(req, res) => {
-    res.render("dosen/Pemrograman_Web/referensi")
+    const id = req.query.id;
+    const ref = await models.course_plan_references.findAll({
+        where:{
+            course_plan_id: id
+        }
+    })
+    res.render("dosen/Pemrograman_Web/referensi", {ref})
 }
 
 controllers.editReferensi = async(req, res) => {

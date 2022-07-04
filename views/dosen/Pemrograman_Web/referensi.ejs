@@ -97,9 +97,10 @@
                 </tr>
               </thead>
               <tbody>
+                <% ref.forEach((r,i)=>{%>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Matt Doyle, 2009, “Beginning PHP 5.3”, Wrox</td>
+                  <th scope="row"><%=i+1%></th>
+                  <td><%=r.author%>, <%=r.year%>, “<%=r.title%>”, <%=r.publisher%></td>
                   <td>
                     <a href="editReferensi?id=1">
                       <button style="margin-right: 5px;" type="button" class="btn btn-warning">
@@ -113,86 +114,7 @@
                     </button>
                   </td>
                 </tr>
-  
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Nicholas Zakas, 2012, “Professional Javascript for Web Developer”, John Wiley & Sons</td>
-                  <td>
-                    <a href="editReferensi?id=1">
-                      <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                        <i class="bi bi-pencil-square"></i>
-                        Edit
-                      </button></a>
-  
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                      <i class="bi bi-trash-fill"></i>
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-  
-            <h5>Referensi Pendukung</h5>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th scope="col">No</th>
-                  <th scope="col">Referensi</th>
-                  <th scope="col">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark Pilgrim, 2010, “HTML5 Up and Running”, O’Reilly</td>
-                  <td>
-                    <a href="editReferensi?id=1">
-                      <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                        <i class="bi bi-pencil-square"></i>
-                        Edit
-                      </button></a>
-  
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                      <i class="bi bi-trash-fill"></i>
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
-  
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Steve Fulton; Jeff Fulton, 2011, “HTML5 Canvas”, O’Reilly</td>
-                  <td>
-                    <a href="editReferensi?id=1">
-                      <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                        <i class="bi bi-pencil-square"></i>
-                        Edit
-                      </button></a>
-  
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                      <i class="bi bi-trash-fill"></i>
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
-  
-                <tr>
-                  <th scope="row">3</th>
-                  <td>S. Stefanor, 2010, “Javascript Patterns”, O’Reilly</td>
-                  <td>
-                    <a href="editReferensi?id=1">
-                      <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                        <i class="bi bi-pencil-square"></i>
-                        Edit
-                      </button></a>
-  
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                      <i class="bi bi-trash-fill"></i>
-                      Hapus
-                    </button>
-                  </td>
-                </tr>
+                <% }) %>
               </tbody>
             </table>
 
