@@ -102,10 +102,11 @@
               </tr>
             </thead>
             <tbody>
+              <% dosen.forEach((d,i)=>{%>
               <tr>
-                <th scope="row">1</th>
-                <td>Husnil Kamil</td>
-                <td>198201182008121002</td>
+                <th scope="row"><%= d.lecturer.id %></th>
+                <td><%= d.lecturer.name %></td>
+                <td><%= d.lecturer.reg_id %></td>
                 <td>
                   <a href="editDosenPengampu?id=1">
                     <button style="margin-right: 5px;" type="button" class="btn btn-warning">
@@ -119,6 +120,7 @@
                     </button>
                 </td>
               </tr>
+              <% }) %>
             </tbody>
           </table>
             

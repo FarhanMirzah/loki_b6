@@ -28,19 +28,19 @@
       
       <div class="nav-links">
         <li>
-          <a href="dashboardAdmin">
+          <a href="/admin/dashboardAdmin">
             <i class='bx bx-grid-alt' ></i>
             <span class="links_name">Dashboard</span>
           </a>
         </li>
         <li>
-          <a href="listRPS" class="active">
+          <a href="/admin/listRPS" class="active">
             <i class='bx bx-list-ul' ></i>
             <span class="links_name">List RPS</span>
           </a>
         </li>
         <li class="log_out">
-          <a href="../login" onclick="return confirm('Apakah Anda yakin ingin Log out?');">
+          <a href="/../login" onclick="return confirm('Apakah Anda yakin ingin Log out?');">
             <i class='bx bx-log-out'></i>
             <span class="links_name">Log out</span>
           </a>
@@ -65,7 +65,7 @@
         <div class="overview-boxes">
           <div class="right-side">
             <div class="box-topic">
-              List RPS dan Jumlah Revisi
+              List RPS yang ada:
             </div>
           </div>
           <div class="btn">
@@ -89,30 +89,32 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>JSI62165</td>
-                <td>Pemrograman Web</td>
-                <td>3</td>
-                <td>00</td>
-                <td class="no-print">
-                  <a href="dosenPengampu?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-success">
-                      <i class='bx bx-user' ></i>
-                      Dosen
-                    </button></a>
-                  <a href="petaCPL-CPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-success">
-                      <i class='bx bx-coin-stack' ></i>
-                      CPL-CPMK
-                    </button></a>
-                  <a href="metodeRPS?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-success">
-                      <i class='bx bx-pie-chart-alt-2' ></i>
-                      Metode
-                    </button></a>
-                </td>
-              </tr>
+              <% RPSAdmin.forEach((R,i)=>{ %>
+                <tr>
+                  <th scope="row"> <%= i+1  %> </th>
+                  <td> <%= R.course_plan.code %> </td>
+                  <td> <%= R.course_plan.name %> </td>
+                  <td> <%=R.course_plan.credit%> </td>
+                  <td><%=R.course_plan.rev%></td>
+                  <td class="no-print">
+                    <a href="/admin/dosenPengampu?id=1">
+                      <button style="margin-right: 5px;" type="button" class="btn btn-success">
+                        <i class='bx bx-user' ></i>
+                        Dosen
+                      </button></a>
+                    <a href="/admin/petaCPL-CPMK?id=1">
+                      <button style="margin-right: 5px;" type="button" class="btn btn-success">
+                        <i class='bx bx-coin-stack' ></i>
+                        CPL-CPMK
+                      </button></a>
+                    <a href="/admin/metodeRPS?id=1">
+                      <button style="margin-right: 5px;" type="button" class="btn btn-success">
+                        <i class='bx bx-pie-chart-alt-2' ></i>
+                        Metode
+                      </button></a>
+                  </td>
+                </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>
