@@ -100,7 +100,34 @@ controllers.editRPS = async(req, res) => {
 }
 
 controllers.cpmk = async(req, res) => {
-    res.render("dosen/Pemrograman_Web/CPMK")
+    const id = req.query.id;
+    const course = await models.course_plans.findOne({ 
+        where: { id: id },
+        include:[{
+            model:models.courses
+        }]
+    
+    });
+    const course_id = course.course_id;
+    const curricula = await models.courses.findOne({
+        where:{
+            id : course_id
+        }
+    })
+    const cpmk = await models.course_los.findAll({
+        where:{
+            course_plan_id:id
+        },
+        include:[{
+            model:models.course_lo_details,
+        }]
+    })
+    const cpl = await models.curriculum_los.findAll({
+        where:{
+            id : curricula.curriculum_id
+        }
+    })
+    res.render("dosen/Pemrograman_Web/CPMK",{cpl,cpmk})
 }
 
 controllers.editCPMK = async(req, res) => {

@@ -40,7 +40,7 @@
           </a>
         </li>
         <li>
-          <a href="../dosen/detailRPS">
+          <a href="../dosen/detailRPS?id=1">
             <i class='bx bx-box' ></i>
             <span class="links_name">Detail RPS</span>
           </a>
@@ -106,9 +106,10 @@
               </tr>
             </thead>
             <tbody>
+              <% cpl.forEach((c,i)=>{%>
               <tr>
-                <th scope="row">CP-1</th>
-                <td>Mengidentifikasi, memformulasikan dan memecahkan permasalahan kebutuhan informasi dari suatu organisasi.</td>
+                <th scope="row"><%= c.code %></th>
+                <td><%= c.name %></td>
                 <td>
                   <a href="/dosen/editCPMK?id=1">
                     <button style="margin-right: 5px;" type="button" class="btn btn-warning">
@@ -122,40 +123,7 @@
                   </button>
                 </td>
               </tr>
-
-              <tr>
-                <th scope="row">CP-2</th>
-                <td>Mengintegrasikan solusi berbasis teknologi informasi secara efektif pada suatu organisasi.</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">CP-3</th>
-                <td>Menerapkan konsep-konsep dasar dalam merencanakan Sistem Informasi, merancang Sistem Informasi, membangun Sistem Informasi, mengoperasikan Sistem Informasi, dan mengevaluasi Sistem Informasi.</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
 
@@ -168,9 +136,10 @@
               </tr>
             </thead>
             <tbody>
+              <% cpmk.forEach((cp,a)=>{ %>
               <tr>
-                <th scope="row">1</th>
-                <td>Mahasiswa mampu menjelaskan konsep dasar dan komponen aplikasi berbasis web. (CP-1, CP-2)</td>
+                <th scope="row"><%=a+1%></th>
+                <td><%= cp.name %>.</td>
                 <td>
                   <a href="/dosen/editCPMK?id=1">
                     <button style="margin-right: 5px;" type="button" class="btn btn-warning">
@@ -184,108 +153,7 @@
                   </button>
                 </td>
               </tr>
-
-              <tr>
-                <th scope="row">2</th>
-                <td>Mahasiswa mampu menggunakan salah satu technology stack untuk membangun aplikasi berbasis web. (CP-1, CP-2)</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">3</th>
-                <td>Mahasiswa mampu menggunakan pemrograman asynchronous. (CP-2, CP-3)</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">4</th>
-                <td>Mahasiswa mampu menerapkan keamanan untuk situs web. (CP-2, CP-3)</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">5</th>
-                <td>Mahasiswa mampu menggunakan dan mendesain format data JSON. (CP-2, CP-3)</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">6</th>
-                <td>Mahasiswa mampu deploy aplikasi web ke internet. (CP-2)</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <th scope="row">7</th>
-                <td>Mahasiswa mampu mendemonstrasikan keterampilan bekerja sama dengan tim. (CP-3)</td>
-                <td>
-                  <a href="/dosen/editCPMK?id=1">
-                    <button style="margin-right: 5px;" type="button" class="btn btn-warning">
-                      <i class="bi bi-pencil-square"></i>
-                      Edit
-                    </button></a>
-
-                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalLong">
-                    <i class="bi bi-trash-fill"></i>
-                    Hapus
-                  </button>
-                </td>
-              </tr>
+              <% }) %>
             </tbody>
           </table>
         </div>
