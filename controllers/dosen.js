@@ -133,7 +133,13 @@ controllers.tambahReferensi = async(req, res) => {
 }
 
 controllers.komponenPenilaian = async(req, res) => {
-    res.render("dosen/Pemrograman_Web/komponenPenilaian")
+    const id = req.query.id;
+    const asses = await models.course_plan_assessments.findAll({
+        where:{
+            course_plan_id: id
+        }
+    })
+    res.render("dosen/Pemrograman_Web/komponenPenilaian", {asses})
 }
 
 controllers.editKomponenPenilaian = async(req, res) => {
