@@ -151,7 +151,21 @@ controllers.tambahKomponenPenilaian = async(req, res) => {
 }
 
 controllers.pertemuanMingguan = async(req, res) => {
-    res.render("dosen/Pemrograman_Web/pertemuanMingguan")
+    const id = req.query.id;
+    const cpmk = await models.course_los.findAll({
+        where:{
+            course_plan_id:id
+        },
+        include:[{
+            model:models.course_lo_details,
+        }]
+    })
+    const weekMeet = await models.course_plan_details.findAll({
+        where:{
+            course_plan_id: id
+        }
+    })
+    res.render("dosen/Pemrograman_Web/pertemuanMingguan", {cpmk,weekMeet})
 }
 
 controllers.editPertemuanMingguan = async(req, res) => {
