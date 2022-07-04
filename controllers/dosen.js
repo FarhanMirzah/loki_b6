@@ -35,10 +35,11 @@ controllers.tambahRPS = async (req, res) => {
 //         semester, 
 //         description
 //     });
-    res.redirect("dosen/tambahRPS")
+//    res.redirect("dosen/tambahRPS")
 // } catch (eror){
 //     console.log(eror);
 // }
+    res.render("dosen/tambahRPS")
 }
 
 controllers.detailRPS = async(req, res) => {
